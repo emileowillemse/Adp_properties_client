@@ -7,11 +7,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 
 public class Gui implements ActionListener, ItemListener {
@@ -28,7 +34,6 @@ public class Gui implements ActionListener, ItemListener {
             private JButton btnadmin;
             private JButton btnagent;
             private JButton btnadd;
-    
     
     public Gui (){
         
@@ -100,7 +105,7 @@ public class Gui implements ActionListener, ItemListener {
         //new Gui().setGui();
         
         Gui gui = new Gui();
-//        gui.setGui();
+        gui.setGui();
        
     }
 

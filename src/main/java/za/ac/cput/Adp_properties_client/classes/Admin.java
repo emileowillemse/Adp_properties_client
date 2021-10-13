@@ -18,6 +18,7 @@ public class Admin {
     private String agent;
     private String available;
     private String date;
+    
 
     public Admin(String house, String address, String location, String cost, String agent, String available, String date) {
         this.house = house;
