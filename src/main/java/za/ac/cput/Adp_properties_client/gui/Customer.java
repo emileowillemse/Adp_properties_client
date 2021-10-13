@@ -16,76 +16,46 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class AgentGui implements ActionListener, ItemListener {
+public class Customer implements ActionListener, ItemListener {
     
     
     private JFrame mainframe;
     
     private JPanel panelcenter , panelsouth;
     
-    private JLabel lblname, lblnumber, lbladdress, lblrented , lblcost , lblcomm , lblavailable , lbldate;
+    private JLabel lblid, lblname, lblsurname;
             
-            private JTextField txtname , txtnumber ,  txtcost, txtcomm, txtavailable, txtdate;
-            
-            private JComboBox caddress, crented;
+            private JTextField txtid , txtname ,  txtsurname;
             
             private JButton btnadd;
     
     
-    public AgentGui (){
+    public Customer (){
         
-        mainframe = new JFrame ("Agent");
+        mainframe = new JFrame ("Customer");
         panelcenter = new JPanel();
         panelsouth = new JPanel ();
+        
+        lblid= new JLabel("ID number:");
+        txtid = new JTextField (25);
         
         lblname= new JLabel("Customers Name:");
         txtname = new JTextField (25);
         
-        lblnumber = new JLabel("Customers Number:");
-        txtnumber = new JTextField (25);
+        lblsurname= new JLabel("Customers Surname:");
+        txtsurname = new JTextField (25);
         
-        String [] choose = {"-no selction made-" , "9 Terblanche street" , "10 Terblanche street" , "11 Terblanche street", "12 Terblanche street"};
-        caddress = new JComboBox(choose);
-        lbladdress =new JLabel("Address:");
-        
-        String [] rent = {"-no selction made-" , "9 Terblanche street" , "10 Terblanche street" , "11 Terblanche street", "12 Terblanche street"};
-        crented = new JComboBox(rent);
-        lblrented =new JLabel("Houses rented:");
-        
-        lblcost = new JLabel("Rental Price:");
-        txtcost = new JTextField (25);
-        
-        
-        lblcomm = new JLabel("Agent Commission:");
-        txtcomm = new JTextField (25);
-        
-        lblavailable = new JLabel("Availability for rent:");
-        txtavailable = new JTextField (25);
-        
-        lbldate = new JLabel("Date:");
-        txtdate = new JTextField (25);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
     btnadd= new JButton ("Add");
     
     
     mainframe.setSize(900,450);
- mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     mainframe.setVisible(true);
     
     btnadd.setEnabled(true);
@@ -97,36 +67,20 @@ public class AgentGui implements ActionListener, ItemListener {
         panelcenter.setLayout( new GridLayout (8,2));
         panelsouth.setLayout ( new GridLayout (1,1));
         
+        panelcenter.add(lblid);
+        panelcenter.add(txtid);
         
         panelcenter.add(lblname);
         panelcenter.add(txtname);
         
-        panelcenter.add(lblnumber);
-        panelcenter.add(txtnumber);
-        
-        panelcenter.add(lbladdress);
-        panelcenter.add(caddress);
-        
-        panelcenter.add(lblrented);
-        panelcenter.add(crented);
-        
-        panelcenter.add(lblcost);
-        panelcenter.add(txtcost);
-        
-        panelcenter.add(lblcomm);
-        panelcenter.add(txtcomm);
-        
-        panelcenter.add(lblavailable);
-        panelcenter.add(txtavailable);
-        
-        panelcenter.add(lbldate);
-        panelcenter.add(txtdate);
+        panelcenter.add(lblsurname);
+        panelcenter.add(txtsurname);
         
         panelsouth.add(btnadd);
         
         
         mainframe.add(panelcenter, BorderLayout.CENTER);
-   mainframe.add(panelsouth, BorderLayout.SOUTH);
+        mainframe.add(panelsouth, BorderLayout.SOUTH);
    
    
    btnadd.addActionListener(this);
@@ -143,7 +97,7 @@ public class AgentGui implements ActionListener, ItemListener {
     
 //    agentButton.addActionListner() {
 //    
-//        AgentGui guiTwo = new AgentGui();
+//        Customer guiTwo = new Customer();
 //        this.close;
 //    }
     
@@ -151,7 +105,7 @@ public class AgentGui implements ActionListener, ItemListener {
         
         //new Gui().setGui();
         
-        AgentGui gui = new AgentGui();
+        Customer gui = new Customer();
         gui.setGui();
        
     }
